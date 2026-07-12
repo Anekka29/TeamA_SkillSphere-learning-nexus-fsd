@@ -1,0 +1,131 @@
+/* Page-specific styles for Landing Page — exact copy from landing.html <style> block */
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Nexus graph visual — signature element */
+.nexus-visual {
+  position: relative;
+  height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nexus-visual svg { width: 100%; height: 100%; overflow: visible; }
+.nexus-line {
+  stroke: #CBD5E1;
+  stroke-width: 1.5;
+  stroke-dasharray: 5 5;
+  opacity: 0.7;
+  animation: dashFlow 20s linear infinite;
+}
+@keyframes dashFlow { to { stroke-dashoffset: -200; } }
+.nexus-node {
+  filter: drop-shadow(0 6px 14px rgba(15, 23, 42, 0.12));
+  animation: floatNode 6s ease-in-out infinite;
+  transform-origin: center;
+}
+.nexus-node.n2 { animation-delay: -1.2s; }
+.nexus-node.n3 { animation-delay: -2.4s; }
+.nexus-node.n4 { animation-delay: -3.6s; }
+.nexus-node.n5 { animation-delay: -4.8s; }
+@keyframes floatNode {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.nexus-center-card {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.3rem;
+  box-shadow: var(--shadow-lg);
+  text-align: left;
+  width: 220px;
+}
+.nexus-center-card .label { font-size: var(--font-size-xs); color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+.nexus-center-card .value { font-family: var(--font-display); font-weight: 700; color: var(--text-primary); font-size: var(--font-size-lg); margin-top: var(--spacing-xs); }
+.nexus-center-card .bar { height: 6px; border-radius: var(--radius-xs); background: var(--border); margin-top: var(--spacing-sm); overflow: hidden; }
+.nexus-center-card .bar span { display: block; height: 100%; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: var(--radius-xs); width: 78%; }
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 991px) {
+  .nexus-visual { height: 340px; margin-top: var(--spacing-2xl); }
+}
+
+/* Mobile Menu Overlay for Landing Navbar */
+@media (max-width: 991px) {
+  .mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    padding: 100px 24px 40px;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mobile-menu-overlay.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .mobile-menu-overlay .nav-link-custom {
+    font-size: 1.25rem;
+    padding: 16px 0;
+    color: var(--text-primary);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .mobile-menu-overlay .nav-item:last-child .nav-link-custom {
+    border-bottom: none;
+    margin-bottom: 24px;
+  }
+
+  .mobile-menu-overlay .btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+  }
+
+  /* Make sure the toggle button stays on top of the overlay */
+  .navbar-nexus .navbar-toggler {
+    position: relative;
+    z-index: 1060;
+  }
+
+  .navbar-nexus .brand-logo {
+    position: relative;
+    z-index: 1060;
+  }
+}
