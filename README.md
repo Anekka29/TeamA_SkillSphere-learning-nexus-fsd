@@ -418,3 +418,25 @@ This project demonstrates
 - Version Control using Git & GitHub
 
 ---
+---
+
+## 📂 Repository
+
+**Repository Name:** `TeamA_SkillSphere-learning-nexus-fsd`
+
+GitHub Repository:
+https://github.com/Anekka29/TeamA_SkillSphere-learning-nexus-fsd
+
+---
+
+## 👩‍💻 Team Members
+
+- Anekka T.S.
+- Chandni Singh
+- B. Rajya Lakshmi
+- G. S. Bharanidharan
+- CH. G. V. Sindhusha
+
+---
+
+⭐ If you found this project useful, don't forget to **star** the repository!
