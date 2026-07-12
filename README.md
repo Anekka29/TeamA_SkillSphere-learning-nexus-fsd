@@ -307,7 +307,7 @@ Protected APIs
 ## Clone Repository
 
 bash
-git clone https://github.com/your-username/SkillSphere-Nexus.git
+git clone https://github.com/Anekka29/TeamA_SkillSphere-learning-nexus-fsd.git
 
 
 ---
@@ -323,15 +323,6 @@ Configure
 
 application.properties
 
-
-Add
-
-properties
-spring.datasource.url=jdbc:mysql://localhost:3306/skillsphere
-
-spring.datasource.username=root
-
-spring.datasource.password=yourpassword
 
 
 Run
